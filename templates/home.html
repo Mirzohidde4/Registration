@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Home | Page {% endblock title %}
+{% block content %}
+{% if user.is_authenticated %}
+    {{ user }}
+    <p><a href="{% url 'logout' %}">Chiqish</a></p>
+{% else %}
+    <p>Saytga kirmagansiz</p>
+    <a href="{% url 'login' %}">Kirish</a>    |
+    <a href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
+{% endif %}        
+{% endblock content %}
