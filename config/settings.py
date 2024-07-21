@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_bootstrap5',
-    'crispy_forms',
     'accounts',
 ]
 
@@ -116,9 +115,20 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Login / Sign uchun modelni ko'rsatish
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+#reverse
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+#Email backend local
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#email smtp settings
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# DEFAULT_FORM_EMAIL = 'your custom email account'
+# EMAIL_HOST = 'smtp'
+# EMAIL_HOST_USER = 'your host username'
+# EMAIL_HOST_PASSWORD = 'your host password'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True

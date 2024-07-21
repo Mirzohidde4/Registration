@@ -8,5 +8,6 @@
         {% csrf_token %}
         {% bootstrap_form form %}
         <button type="submit" class="btn btn-primary">Kirish</button>
+        <a class="btn btn-outline-danger" role="button" href="{% url 'password_reset' %}">Forgot password?</a>
     </form>
 {% endblock content %}
