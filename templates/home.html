@@ -2,8 +2,9 @@
 {% block title %} Home | Page {% endblock title %}
 {% block content %}
 {% if user.is_authenticated %}
-    {{ user }}
+    <p>{{ user }}</p>
     <p><a href="{% url 'logout' %}">Chiqish</a></p>
+    <p><a href="{% url 'password_change' %}">Parolni yangilash</a></p>
 {% else %}
     <p>Saytga kirmagansiz</p>
     <a href="{% url 'login' %}">Kirish</a>    |
